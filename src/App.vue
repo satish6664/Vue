@@ -1,15 +1,15 @@
-import React from "react";
+<template>
+  <div>
+    <h3>{{ title }}</h3>
+    <p>Create a simple Vue component and display data in the template. </p>
 
-export const Steps = ({ children }) => {
-  const renderChildren = () => {
-    return React.Children.map(children, (element, index) => {
-      return (
-        <element.type order={index} {...element.props}>
-          {element.props.children}
-        </element.type>
-      );
-    });
-  };
-  return <div>{renderChildren()}</div>;
-};
-export default Steps;
+    <p>Task Completed On {{ date }}.</p>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const title = ref("My First Task");
+const date = ref("09/02/2024");
+</script>
